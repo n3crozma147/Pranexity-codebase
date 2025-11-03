@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Users, Globe, TrendingUp } from 'lucide-react';
+import { ArrowRight, Zap, Users, Globe, TrendingUp, Activity, GraduationCap, ShoppingBag } from 'lucide-react';
 import Hero from '../components/Hero';
-
 import React, { useEffect, useState } from "react";
+import video from '../Assetes/gettyimages-2042848752-640_adpp.mp4'
 
 const AnimatedCounter = ({ value }) => {
   const [count, setCount] = useState(0);
@@ -40,7 +40,6 @@ const AnimatedCounter = ({ value }) => {
 
   return <div className="text-4xl md:text-5xl font-bold mb-2">{displayValue()}</div>;
 };
-
 
 const Home = () => {
   const verticals = [
@@ -86,6 +85,7 @@ const Home = () => {
         ctaLink="/services"
       />
 
+      {/* Transforming Industries */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -131,29 +131,29 @@ const Home = () => {
         </div>
       </section>
 
-     <section className="py-20 bg-gradient-to-br from-slate-800 via-cyan-900 to-teal-900 text-white">
-  <div className="container mx-auto px-4">
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-      {stats.map((stat, index) => (
-        <motion.div
-          key={stat.label}
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="text-center"
-        >
-          <stat.icon className="w-12 h-12 mx-auto mb-4" />
-          <AnimatedCounter value={stat.value} />
-          <div className="text-lg opacity-90">{stat.label}</div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+      {/* Stats Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-800 via-cyan-900 to-teal-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <stat.icon className="w-12 h-12 mx-auto mb-4" />
+                <AnimatedCounter value={stat.value} />
+                <div className="text-lg opacity-90">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-
-
+      {/* Why Choose Pranexity */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -203,6 +203,7 @@ const Home = () => {
               </Link>
             </motion.div>
 
+            {/* 🎥 Replaced Image with Looping Video */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -210,10 +211,13 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <img
-                src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="AI Technology"
-                className="rounded-2xl shadow-2xl"
+              <video
+                src={video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />
               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-cyan-500 to-teal-500 rounded-2xl -z-10"></div>
             </motion.div>
@@ -221,6 +225,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <motion.div
@@ -256,7 +261,5 @@ const Home = () => {
     </div>
   );
 };
-
-import { Activity, GraduationCap, ShoppingBag } from 'lucide-react';
 
 export default Home;

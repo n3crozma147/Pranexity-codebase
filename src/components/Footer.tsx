@@ -1,9 +1,15 @@
-import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Youtube, Instagram, Sparkles } from 'lucide-react';
-import logo from '../Assetes/Pranexit_Logo.png';
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Youtube, Instagram, Sparkles } from "lucide-react";
+import logo from "../Assetes/Pranexit_Logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  const handleServiceClick = (path: string) => {
+    navigate(path);
+  };
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-cyan-950 to-slate-900 text-white">
@@ -28,84 +34,47 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              <a
-                href="https://in.linkedin.com/company/empathytechnologies365"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-gray-400 hover:text-cyan-400 focus:outline-none focus:text-cyan-300 transition-colors"
-              >
+              <a href="https://in.linkedin.com/company/empathytechnologies365" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Linkedin className="w-10 h-5" />
               </a>
-              <a
-                href="https://x.com/ETMicrosoft365"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-                className="text-gray-400 hover:text-blue-400 focus:outline-none focus:text-blue-300 transition-colors"
-              >
+              <a href="https://x.com/ETMicrosoft365" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Twitter className="w-10 h-5" />
               </a>
-              <a
-                href="https://www.facebook.com/pranexity"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-gray-400 hover:text-blue-500 focus:outline-none focus:text-blue-400 transition-colors"
-              >
+              <a href="https://www.facebook.com/pranexity" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-400 hover:text-blue-500 transition-colors">
                 <Facebook className="w-10 h-5" />
               </a>
-              <a
-                href="https://www.instagram.com/pranexity"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-gray-400 hover:text-pink-500 focus:outline-none focus:text-pink-400 transition-colors"
-              >
+              <a href="https://www.instagram.com/pranexity" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-pink-500 transition-colors">
                 <Instagram className="w-10 h-5" />
               </a>
-              <a
-                href="https://www.youtube.com/@EmpathyTechnologies"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="text-gray-400 hover:text-red-500 focus:outline-none focus:text-red-400 transition-colors"
-              >
+              <a href="https://www.youtube.com/@EmpathyTechnologies" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-gray-400 hover:text-red-500 transition-colors">
                 <Youtube className="w-10 h-5" />
               </a>
-              <a
-                href="https://www.glassdoor.co.in/Reviews/Empathy-Technologies-Reviews-E10323350.htm"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Glassdoor"
-                className="text-gray-400 hover:text-green-400 focus:outline-none focus:text-green-300 transition-colors"
-              >
+              <a href="https://www.glassdoor.co.in/Reviews/Empathy-Technologies-Reviews-E10323350.htm" target="_blank" rel="noopener noreferrer" aria-label="Glassdoor" className="text-gray-400 hover:text-green-400 transition-colors">
                 <Sparkles className="w-10 h-5" />
               </a>
             </div>
           </div>
 
-          {/* Services Section - Two Column Clickable Grid */}
+          {/* Services Section (now clickable via useNavigate) */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-teal-400">Our Services</h3>
             <div className="grid grid-cols-2 gap-3">
               {[
-                { name: 'Healthcare', path: '/services/healthcare' },
-                { name: 'Education', path: '/services/education' },
-                { name: 'Finance', path: '/services/finance' },
-                { name: 'Retail', path: '/services/retail' },
-                { name: 'Agriculture', path: '/services/agriculture' },
-                { name: 'Logistics', path: '/services/logistics' },
-                { name: 'Smart Cities', path: '/services/smart-cities' },
+                { name: "Healthcare", path: "/services" },
+                { name: "Education", path: "/services" },
+                { name: "Finance", path: "/services" },
+                { name: "Retail", path: "/services" },
+                { name: "Agriculture", path: "/services" },
+                { name: "Logistics", path: "/services" },
+                { name: "Smart Cities", path: "/services/smart" },
               ].map((service) => (
-                <Link
+                <button
                   key={service.name}
-                  to={service.path}
+                  onClick={() => handleServiceClick(service.path)}
                   className="text-gray-200 text-sm text-center bg-slate-800 rounded-lg px-4 py-2 hover:bg-cyan-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all shadow-md"
-                  role="button"
                 >
                   {service.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
@@ -120,10 +89,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 text-teal-400 flex-shrink-0" />
-                <a
-                  href="mailto:support@pranexity.com"
-                  className="text-gray-300 hover:text-white focus:outline-none focus:text-white transition-colors"
-                >
+                <a href="mailto:support@pranexity.com" className="text-gray-300 hover:text-white transition-colors">
                   support@pranexity.com
                 </a>
               </li>
@@ -142,10 +108,10 @@ const Footer = () => {
               &copy; {currentYear} Pranexity. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm">
+              <Link to="/privacy" className="text-gray-400 hover:text-white text-sm">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-white transition-colors text-sm">
+              <Link to="/terms" className="text-gray-400 hover:text-white text-sm">
                 Terms of Service
               </Link>
             </div>
