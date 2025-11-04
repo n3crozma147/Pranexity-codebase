@@ -114,16 +114,17 @@ const ContactForm = () => {
         <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
           Message *
         </label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows={6}
-          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors resize-none"
-          placeholder="Tell us about your project..."
-        ></textarea>
+       <textarea
+  id="message"
+  name="message"
+  value={formData.message}
+  onChange={handleChange}
+  required
+  rows={3}
+  className="w-full h-24 px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition-colors resize-none"
+  placeholder="Tell us about your project..."
+></textarea>
+
       </div>
 
       <div className="flex items-center justify-between">
