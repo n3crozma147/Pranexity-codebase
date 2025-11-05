@@ -70,9 +70,9 @@ const Home = () => {
   ];
 
   const stats = [
-    { icon: Users, value: '100K+', label: 'Users Empowered' },
-    { icon: Zap, value: '50+', label: 'AI Solutions' },
-    { icon: Globe, value: '15+', label: 'Cities Covered' },
+    { icon: Users, value: '10K+', label: 'Users Empowered' },
+    { icon: Zap, value: '30+', label: 'AI Solutions' },
+    { icon: Globe, value: '10+', label: 'Cities Covered' },
     { icon: TrendingUp, value: '95%', label: 'Client Satisfaction' },
   ];
 

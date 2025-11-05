@@ -129,10 +129,10 @@ const Footer = () => {
               <li className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 text-teal-400 flex-shrink-0" />
                 <a
-                  href="mailto:support@pranexity.com"
+                  href="mailto:tharun@pranexity.com"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  support@pranexity.com
+                  tharun@pranexity.com
                 </a>
               </li>
             </ul>
