@@ -79,7 +79,7 @@ const Contact = () => {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea
-                    placeholder="Tell us about your project"
+                    placeholder="Tell us about your business"
                     rows={2}
                     required
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
