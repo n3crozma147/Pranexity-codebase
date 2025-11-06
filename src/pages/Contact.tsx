@@ -49,11 +49,65 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               className="bg-gray-50 p-10 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Book a Free Demo</h2>
               <p className="text-sm text-gray-600 mb-6">
-                
+                Schedule a personalized demo to see how our AI solutions can transform your business
               </p>
-              <ContactForm />
+
+              {/* Form Fields */}
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                  <textarea
+                    placeholder="Tell us about your project"
+                    rows={2}
+                    required
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+                  />
+                </div>
+
+                {/* 🔹 New Field: Preferred Time to Connect */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Preferred Time to Connect
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. 10 AM – 1 PM or Evening"
+                    required
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+                  />
+                </div>
+
+                <div className="text-left">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-cyan-600 to-teal-500 text-white font-semibold rounded-full shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  >
+                    Book Demo Session
+                  </button>
+                </div>
+              </form>
             </motion.div>
 
             {/* Contact Info */}
@@ -79,9 +133,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
-                  <p className="text-gray-600">contact@pranexity.com</p>
-                  <p className="text-gray-600">support@pranexity.com</p>
-                  <p className="text-gray-600">careers@pranexity.com</p>
+                  <p className="text-gray-600">tharun@pranexity.com</p>
                 </div>
               </motion.div>
 
@@ -95,7 +147,7 @@ const Contact = () => {
               >
                 <iframe
                   title="Pranexity AI Solutions Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9024022126976!2d77.5945627153953!3d12.971598890855219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670e9f1c3cb%3A0xbaa8e9b5d9eb0a0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1698839339670!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7345611651577!2d77.58832957499997!3d12.901620987391084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1514290d8515%3A0xaed73de2f014197!2sJ%20P%20Nagar%20Phase%205%2C%20J.%20P.%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560078!5e0!3m2!1sen!2sin!4v1698839339670!5m2!1sen!2sin"
                   className="w-full h-[350px] border-0"
                   allowFullScreen
                   loading="lazy"
@@ -109,9 +161,11 @@ const Contact = () => {
                   className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-black/70 via-black/40 to-transparent backdrop-blur-sm text-white text-center p-6"
                 >
                   <h3 className="text-2xl md:text-3xl font-bold mb-2">Visit Our Office</h3>
-                  <p className="text-base mb-4">Pranexity AI Solutions, Koramangala, Bangalore</p>
+                  <p className="text-base mb-4">
+                    Pranexity AI Solutions, J P Nagar Phase 5, Bangalore
+                  </p>
                   <a
-                    href="https://maps.google.com/?q=Pranexity+AI+Solutions,+Koramangala,+Bangalore"
+                    href="https://www.google.com/maps/place/J+P+Nagar+Phase+5,+J.+P.+Nagar,+Bengaluru,+Karnataka+560078"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition-all duration-300"
