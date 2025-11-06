@@ -12,10 +12,6 @@ const router = Router();
  * DELETE /api/contacts/:id     -> delete
  */
 
-router.get("/", ctrl.listContacts);
-router.get("/:id", ctrl.getContact);
-router.post("/", ctrl.createContact);
-router.put("/:id", ctrl.updateContact);
-router.delete("/:id", ctrl.deleteContact);
+
 
 export default router;

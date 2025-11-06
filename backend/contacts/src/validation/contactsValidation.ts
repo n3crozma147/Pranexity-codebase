@@ -1,15 +1,9 @@
 import { z } from "zod";
 
-export const createContactSchema = z.object({
-  name: z.string().min(1, "name is required"),
-  email: z.string().email("invalid email"),
-  phone: z.string().optional(),
-  notes: z.string().optional()
-});
-
-export const updateContactSchema = z.object({
-  name: z.string().min(1).optional(),
-  email: z.string().email().optional(),
-  phone: z.string().optional(),
-  notes: z.string().optional()
-});
+export const contactSchema = z.object({
+  name : z.string().min(4),
+  email : z.string().email().refine((val) => val.endsWith(".com")),
+  phone : z.string().min(10).max(10).optional(),
+  companyName : z.string().optional(),
+  message : z.string().min(10).max(100)
+})
