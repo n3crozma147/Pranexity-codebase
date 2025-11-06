@@ -110,4 +110,4 @@ function RootApp() {
   );
 }
 
-export default RootApp;
+export default RootApp; // Finalised the transition 
