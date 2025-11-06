@@ -3,6 +3,7 @@ import { ZodError } from "zod"; // runtime validation lib ,
 
 export function errorHandler(err: any, _req: Request, res: Response, _next: NextFunction) {
   if (err instanceof ZodError) {
+    console.log(err)
     return res.status(400).json({ error: "Validation error", issues: err.errors });
   }
   if (err.code === "P2002") {

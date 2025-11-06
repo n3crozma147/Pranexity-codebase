@@ -4,6 +4,6 @@ export const contactSchema = z.object({
   name : z.string().min(4),
   email : z.string().email().refine((val) => val.endsWith(".com")),
   phone : z.string().min(10).max(10).optional(),
-  companyName : z.string().optional(),
-  message : z.string().min(10).max(100)
+  company : z.string().optional(),
+  message : z.string()
 })
