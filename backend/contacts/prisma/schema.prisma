@@ -9,10 +9,10 @@ generator client {
 }
 
 model ContactUs {
-  id           String  @id @default(cuid())
-  name         String
-  email        String
-  phone  String?
-  message      String
-  company  String?
+  id      String  @id @default(cuid())
+  name    String
+  email   String
+  phone   String?
+  company String?
+  message String
 }
