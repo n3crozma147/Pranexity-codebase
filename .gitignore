@@ -42,6 +42,8 @@ dist
 dist-ssr
 *.local
 
+*.xlsx
+
 .vscode/*
 !.vscode/extensions.json
 .idea

@@ -19,7 +19,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post('https://jsonplaceholder.typicode.com/posts', formData);
+      await axios.post('http://localhost:4000/api/contactUs', formData);
       setIsSuccess(true);
       setFormData({ name: '', email: '', phone: '', company: '', message: '' });
       setTimeout(() => setIsSuccess(false), 3000);
