@@ -76,6 +76,21 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* 🔹 New Mandatory Phone Number Field */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="e.g. 98765 43210"
+                    required
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit phone number"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+                  />
+                </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea
@@ -86,7 +101,7 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* 🔹 New Field: Preferred Time to Connect */}
+                {/* Preferred Time to Connect */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Preferred Time to Connect

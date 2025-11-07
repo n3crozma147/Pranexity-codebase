@@ -149,42 +149,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide everything we do
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mb-6 mx-auto">
-                  <value.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 text-center mb-3">{value.title}</h3>
-                <p className="text-gray-600 text-center">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Founders Section */}
       <section className="py-20 bg-gradient-to-br from-slate-800 via-cyan-900 to-teal-900 text-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -198,12 +163,44 @@ const About = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Managing Director - Tharun */}
+            {/* Director - Gaurav (Now on the left) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-center"
+            >
+              <div className="flex justify-center mb-6">
+                <div className="relative">
+                  <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                    <img
+                      src={gaurav}
+                      alt="Gaurav - Director"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute inset-0 rounded-full ring-4 ring-teal-400/30 ring-offset-4 ring-offset-transparent"></div>
+                </div>
+              </div>
+              <p className="text-lg leading-relaxed mb-6">
+                "At Pranexity, we're not just building software. We're building bridges between cutting-edge 
+                technology and the people who need it most. Every solution we create is designed to elevate human 
+                potential, create meaningful opportunities, and contribute to India's journey toward becoming a 
+                global AI leader."
+              </p>
+              <div className="mt-6">
+                <p className="text-2xl font-bold">Gaurav Gupta</p>
+                <p className="text-lg opacity-90">Director</p>
+              </div>
+            </motion.div>
+
+            {/* Managing Director - Tharun (Now on the right) */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-center"
             >
               <div className="flex justify-center mb-6">
@@ -225,40 +222,8 @@ const About = () => {
                 make innovation truly human."
               </p>
               <div className="mt-6">
-                <p className="text-2xl font-bold">Tharun</p>
+                <p className="text-2xl font-bold">Tharun Benchappa</p>
                 <p className="text-lg opacity-90">Managing Director</p>
-              </div>
-            </motion.div>
-
-            {/* Co-Founder - Gaurav */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 text-center"
-            >
-              <div className="flex justify-center mb-6">
-                <div className="relative">
-                  <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                    <img
-                      src={gaurav}
-                      alt="Gaurav - Co-Founder"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute inset-0 rounded-full ring-4 ring-teal-400/30 ring-offset-4 ring-offset-transparent"></div>
-                </div>
-              </div>
-              <p className="text-lg leading-relaxed mb-6">
-                "At Pranexity, we're not just building software. We're building bridges between cutting-edge 
-                technology and the people who need it most. Every solution we create is designed to elevate human 
-                potential, create meaningful opportunities, and contribute to India's journey toward becoming a 
-                global AI leader."
-              </p>
-              <div className="mt-6">
-                <p className="text-2xl font-bold">Gaurav</p>
-                <p className="text-lg opacity-90">Co-Founder</p>
               </div>
             </motion.div>
           </div>
