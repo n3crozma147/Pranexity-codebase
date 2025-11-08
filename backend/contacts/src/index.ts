@@ -1,7 +1,7 @@
 import express, { urlencoded } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { contactRouter } from "./routes/contacts";
+import router from "./routes/contactRouter";
 import morgan from 'morgan'
 import { errorHandler } from "./middleware/errorHandler";
 
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended : true }))
 app.use(morgan('dev'))
 app.get("/", (_req, res) => res.send({ ok: true, name: "Pranexity Contacts API" }));
 
-app.use("/api/contactUs", contactRouter);
+app.use("/api/contactUs", router);
 
 app.use(errorHandler);
 
