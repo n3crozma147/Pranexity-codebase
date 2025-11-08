@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { Mail, MapPin, Linkedin, Twitter, Facebook, Youtube, Instagram, Sparkles } from "lucide-react";
 import logo from "../Assetes/Pranexit_Logo.png";
 
+type Path = `/${string}`
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
 
-  const handleServiceClick = (path) => {
+  const handleServiceClick = (path : Path) => {
     navigate(path);
   };
 
@@ -109,7 +111,7 @@ const Footer = () => {
               ].map((service) => (
                 <button
                   key={service.name}
-                  onClick={() => handleServiceClick(service.path)}
+                  onClick={() => handleServiceClick((service.path as Path))}
                   className="text-gray-200 text-sm text-center bg-slate-800 rounded-lg px-4 py-2 hover:bg-cyan-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all shadow-md"
                 >
                   {service.name}
