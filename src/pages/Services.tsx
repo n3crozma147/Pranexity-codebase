@@ -19,7 +19,7 @@ const Services = () => {
   useEffect(() => {
     const loadServices = async () => {
       try {
-        const response = await axios.get('/src/data/services.json');
+        const response = await axios.get('/data/services.json');
         setServices(response.data);
       } catch (error) {
         console.error('Error loading services:', error);

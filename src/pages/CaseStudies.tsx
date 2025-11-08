@@ -21,7 +21,7 @@ const CaseStudies = () => {
   useEffect(() => {
     const loadCaseStudies = async () => {
       try {
-        const response = await axios.get('/src/data/caseStudies.json');
+        const response = await axios.get('/data/caseStudies.json');
         setCaseStudies(response.data);
       } catch (error) {
         console.error('Error loading case studies:', error);
