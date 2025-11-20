@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Users, Globe, TrendingUp, Activity, GraduationCap, ShoppingBag } from 'lucide-react';
 import Hero from '../components/Hero';
 import React, { useEffect, useState } from "react";
-import video from '../Assetes/gettyimages-2042848752-640_adpp.mp4'
+import video from '../../Assetes/gettyimages-2042848752-640_adpp.mp4'
 
-const AnimatedCounter = ({ value }) => {
+const AnimatedCounter = ({ value }: { value: string }) => {
   const [count, setCount] = useState(0);
 
   const isK = value.includes("K");
