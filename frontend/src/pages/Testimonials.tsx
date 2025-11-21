@@ -22,7 +22,7 @@ const Testimonials = () => {
   useEffect(() => {
     const loadTestimonials = async () => {
       try {
-        const response = await axios.get('/src/data/testimonials.json');
+        const response = await axios.get('/data/testimonials.json');
         setTestimonials(response.data);
       } catch (error) {
         console.error('Error loading testimonials:', error);

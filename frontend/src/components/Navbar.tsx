@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sparkles, ArrowRight } from 'lucide-react'; // right arrow icon in contact button
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../Assetes/Pranexit_Logo.png' // import your logo here
+import logo from '../../Assetes/Pranexit_Logo.png' // import your logo here
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
